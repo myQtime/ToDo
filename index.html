@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@700&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="mt-6 mobile-container">TO DO LIST</h1>   
+    <div class="NewToDo w500 mt-4 m0a mobile-container">
+        <input type="text" placeholder="新增代辦事項" class="addtxt">
+        <input type="button" value="+" class="add">
+    </div>  
+    <div class="main w500 m0a mt-1 mb-4 mobile-container" >
+        <div class="filter">
+            <input type="button" value="全部" class="allFilter">
+            <input type="button" value="待完成" class="todoFilter">
+            <input type="button" value="已完成" class="doneFilter">
+        </div>
+        <ul class="list ">
+            
+        </ul>
+        <div class="footer mt-3 m0a">
+            <p class="todoNum"></p><input type="button" value="清除已完成項目" class="deleteAll">
+        </div>
+    </div>
+    <script src="all.js"></script>
+</body>
+</html>

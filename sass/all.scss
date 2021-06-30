@@ -1,0 +1,215 @@
+@import "Reset";
+
+
+*,*::after,*::before{
+    box-sizing:border-box ;
+}
+
+body{
+    font-family: 'Noto Sans TC', sans-serif;
+    background: linear-gradient(-11deg, #ffffff 50%, #FFD370 50%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+$dark : #333333;
+$white : #FFFFFF;
+$gray : #9F9A91;
+$ash : #4D333333 ;
+
+
+$fz-m : 16px;
+$fz-s : 14px;
+$fz-lg : 48px;
+$fz-l : 32px;
+
+@mixin moble {
+    @media (max-width:576px) {
+        @content;
+    }
+}
+.m0a{
+    margin: 0 auto;
+}
+
+
+.mt-6{
+    margin-top: 48px;
+}
+
+.mt-4{
+    margin-top: 32px;
+}
+
+.mt-3{
+    margin-top:24px;
+}
+
+.mt-1{
+    margin-top: 8px;
+}
+
+.mb-4{
+    margin-bottom: 32px;
+}
+
+.mobile-container{
+    @include moble{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+}
+
+h1{
+    font-family:'Baloo Tamma 2';
+    font-size: $fz-lg;
+    text-align: center;
+    @include moble{
+        font-size: $fz-l;
+    }
+}
+
+.w500{
+    max-width: 500px;
+}
+
+.NewToDo{
+    background-color: $white;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    padding: 0 5px 0 20px;
+}
+
+.addtxt{
+    width: 400px;
+    outline: none;
+    border: none;
+    font-size: $fz-m;
+    color: $gray;
+
+}
+
+.add{
+    cursor: pointer;
+    border: none;
+    background: $dark;
+    color: $white;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: $fz-l;
+}
+
+.main{
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.15);
+    padding-bottom: 24px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    input{
+        cursor: pointer;
+        height: 48px;
+        width: 33.33333333%;
+        border: none;
+        background: $white;
+        color: $gray;
+        border-radius: 10px 10px 0 0;
+        border-bottom: 2px solid #EFEFEF;
+        }
+    .active {
+        color: $dark;
+        font-weight: bold;
+        border-bottom: 2px solid $dark;   
+    }   
+}
+
+.list{
+    li{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 48px;
+        margin: 0 auto;
+        p{
+            width: 85%;
+            font-size: $fz-m;
+            color: $dark;
+            border-bottom:  1px solid #EFEFEF;
+            line-height: 48px;
+        }
+        &:hover{
+            input[type=button]{
+                color: $dark;
+            }
+        }
+    }
+    input[type=button]{
+        cursor: pointer;
+        font-size: $fz-l;
+        line-height: $fz-l;
+        font-family: 'Baloo Tamma 2';
+        background: $white;
+        color: $white;
+        border: none;
+        @include moble{
+            color: $dark;
+        }
+    }
+}
+
+input[type=checkbox]{
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    appearance: none;
+    border: 1px solid $dark;
+    border-radius: 5px;
+    &:checked{
+        background: $white;
+        border: 1px solid $white;
+        position: relative;  
+        &::after{
+            content: '';
+            top: 6px;
+            left:2px;
+            position: absolute;
+            background: transparent;
+            border: #FFD370 solid 2px;
+            border-top: none;
+            border-right: none;
+            height: 6px;
+            width: 13px;
+            transform: rotate(-45deg);
+        }
+        & + p{
+            text-decoration: line-through;
+            color: $ash;
+        }
+    }
+}
+
+.footer{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $fz-s;
+    input[type=button]{
+        cursor: pointer;
+        color: $gray;
+        background: $white;
+        border: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
