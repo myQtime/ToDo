@@ -124,19 +124,15 @@ list.addEventListener('click',function(e){
 
 // filter篩選器
 filter.addEventListener('click',function(e){
-    let str=``;
     if (e.target.value == "全部"){
         pageNumber = 0;
     }
-    else data.forEach(function(){
-        if (e.target.value == "待完成"){
-            pageNumber = 1;
-        }
-        else if (e.target.value == "已完成"){
-            pageNumber = 2;
-        }
-        
-    })
+    else if (e.target.value == "待完成"){
+        pageNumber = 1;
+    }
+    else if (e.target.value == "已完成"){
+        pageNumber = 2;
+    }
     init();
 })
 
